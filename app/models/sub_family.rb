@@ -1,0 +1,2 @@
+class SubFamily < ApplicationRecord
+end

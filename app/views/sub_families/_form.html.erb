@@ -1,0 +1,27 @@
+<%= form_with(model: sub_family, local: true) do |form| %>
+  <% if sub_family.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sub_family.errors.count, "error") %> prohibited this sub_family from being saved:</h2>
+
+      <ul>
+        <% sub_family.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :nome %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<script>
+$('input[name="commit"]').addClass('btn').addClass('btn-success');
+</script>

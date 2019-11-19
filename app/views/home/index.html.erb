@@ -1,0 +1,18 @@
+<h1 class="page-header" style="text-align: -webkit-center;">Bem vindo ao Genus</h1>
+
+
+<h2 style="text-align: -webkit-center;">
+    <a class="show-genus" href="/genus">Listagem</a>
+</h2>
+
+
+
+<% if session[:user_id] %>
+<h2 style="text-align: -webkit-center;">
+    <a class="show-genus" href="/sub_families">Sub Familias</a>
+</h2>
+
+<h2 style="text-align: -webkit-center;">
+    <a class="show-genus" href="/genus_notes">Notas</a>
+</h2>
+<% end %>

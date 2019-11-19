@@ -1,0 +1,65 @@
+<%= form_with(model: genu, local: true) do |form| %>
+  <% if genu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(genu.errors.count, "error") %> prohibited this genu from being saved:</h2>
+
+      <ul>
+        <% genu.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <label for="genu_name">Nome</label>
+    <%= form.text_field :name, class: 'form-control'%>
+  </div>
+
+  <div class="field form-group">
+    <label for="genu_sub_family_id">Sub Família</label>
+    <select name="genu[sub_family_id]" id="genu_sub_family_id" class="form-control">
+        <% sub_family.each do |family| %>
+            <option value="<%= family.id %>">
+            <%= family.name %>
+            </option>
+            <% end %>
+    </select>
+  </div>
+
+  <div class="field form-group">
+    <label for="genu_species_count">Número de espécies</label>
+    <%= form.number_field :species_count, class: 'form-control' %>
+  </div>
+
+  <div style="margin-left: 20px;" class="field form-group">
+    <label class="form-check-label">
+    <%= form.check_box :is_published, class: 'form-check-input' %>
+    Publicar? </label>
+  </div>
+
+  <div class="field form-group">
+    <label for="genu_first_discovered_at">Descoberto em</label>
+    <%= form.date_select :first_discovered_at, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :fun_fact %>
+    <%= form.text_area :fun_fact, class: 'form-control' %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script>
+    $('#genu_first_discovered_at_1i').addClass('form-control').addClass('date');
+    $('#genu_first_discovered_at_2i').addClass('form-control').addClass('date');
+    $('#genu_first_discovered_at_3i').addClass('form-control').addClass('date');
+    $('#genu_first_discovered_at_4i').addClass('form-control').addClass('date');
+    $('#genu_first_discovered_at_5i').addClass('form-control').addClass('date');
+    $('input[name="commit"]').addClass('btn').addClass('btn-success');
+</script>

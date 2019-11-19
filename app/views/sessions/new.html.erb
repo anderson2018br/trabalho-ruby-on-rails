@@ -1,0 +1,22 @@
+<p id="alert"><%= alert %></p>
+<h1>Login</h1>
+<%= form_tag sessions_path do |form| %>
+  <div class="field">
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="field">
+    <label for="password">Senha</label>
+    <%= password_field_tag :password %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= submit_tag "Entrar" %>
+  </div>
+<% end %>
+
+<script>
+    $('#email').addClass('form-control');
+    $('#password').addClass('form-control');
+    $('input[name="commit"]').addClass('btn').addClass('btn-success');
+</script>

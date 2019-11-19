@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Genus Notes</h1>
+<%= link_to raw('<button id="new" class="btn btn-dark" style="float: right;margin-top: -45px;">Novo Genus</button>'), new_genus_note_path %>
+<table class="table table-striped display" id="table2_id">
+  <thead class="table-dark">
+    <tr>
+      <th>Genus</th>
+      <th>Avatar</th>
+      <th>Note</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genus_notes.each do |genus_note| %>
+    <% @genu = @genus.find(genus_note.genus_id) %>
+      <tr>
+        <td><%= @genu.name %></td>
+        <td><%= image_tag (genus_note.user_avatar_filename), class: "logo-icon", style: "border-radius: 50%;height: 35px;margin-left: 20px;" %></td>
+        <td><%= genus_note.note %></td>
+        <td><%= link_to raw('<span style="color:black!important;" class="e fa fa-eye"></span> '), genus_note %> |
+        <%= link_to raw('<span style="color:black!important;" class="e fa fa-pen"></span>'), edit_genus_note_path(genus_note) %> |
+        <%= link_to raw('<span style="color:black!important;" class="fa fa-trash"></span>'), genus_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<br>
+<script>
+    $(document).ready(function () {
+        $('#table2_id').DataTable({
+                    "language": {
+                        "info": "Mostrando Página _PAGE_ de _PAGES_",
+                        "search": "",
+                        "paginate": {
+                            "next": "Próxima Página",
+                            "previous": "Página Anterior"
+                        }
+                    },
+
+                });
+                $('.dataTables_length').hide();
+                $('.dataTables_filter input').addClass('form-control').attr('placeholder','Procurar Nota');
+                $('.dataTables_filter').css('float','left');
+    });
+
+    $('#new2').on('click',function(){
+        $('#table2_id_filter').remove();
+        $('#table2_id_info').remove();
+        $('#table2_id_paginate').remove();
+    });
+
+    $('.e2').on('click',function(){
+            $('#table2_id_filter').remove();
+            $('#table2_id_info').remove();
+            $('#table2_id_paginate').remove();
+        });
+
+        $('.bt').on('click',function(){
+                    $('#table2_id_filter').remove();
+                    $('#table2_id_info').remove();
+                    $('#table2_id_paginate').remove();
+                });
+
+</script>

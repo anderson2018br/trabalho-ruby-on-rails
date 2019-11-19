@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sub_family: one
+  species_count: 1
+  is_published: false
+  first_discovered_at: 2019-11-19
+  fun_fact: MyText
+  created_at: 2019-11-19
+  updated_at: 2019-11-19
+
+two:
+  name: MyString
+  sub_family: two
+  species_count: 1
+  is_published: false
+  first_discovered_at: 2019-11-19
+  fun_fact: MyText
+  created_at: 2019-11-19
+  updated_at: 2019-11-19

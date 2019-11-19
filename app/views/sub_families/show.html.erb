@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<table class="table">
+<tbody>
+<tr>
+  <th><strong>Nome:</strong><th>
+  <td><%= @sub_family.name %></td>
+</tr>
+
+<tr>
+  <th><strong>Criado em:</strong><th>
+  <td><%= @sub_family.created_at %></td>
+</tr>
+
+<tr>
+  <th><strong>Atualizado em:</strong><th>
+  <td><%= @sub_family.updated_at %></td>
+</tr>
+</tbody>
+</table>
+<%= link_to raw('<button class="btn btn-primary">Editar</button>'), edit_sub_family_path(@sub_family) %> |
+<%= link_to raw('<button class="btn btn-dark">Voltar</button>'), sub_families_path %>

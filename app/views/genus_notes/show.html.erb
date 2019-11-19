@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<table class="table">
+<tbody>
+<tr>
+  <th><strong>Genus:</strong></th>
+  <td><% @genu = @genus.find(@genus_note.genus_id) %>
+  <%= @genu.name %></td>
+</tr>
+
+<tr>
+  <th><strong>User avatar filename:</strong></th>
+  <td><%= @genus_note.user_avatar_filename %></td>
+</tr>
+
+<tr>
+  <th><strong>Note:</strong></th>
+  <td><%= @genus_note.note %></td>
+</tr>
+
+<tr>
+  <th><strong>Created at:</strong></th>
+  <td><%= @genus_note.created_at %></td>
+</tr>
+
+<tr>
+  <th><strong>Updated at:</strong></th>
+  <td><%= @genus_note.updated_at %></td>
+</tr>
+</tbody>
+</table>
+<%= link_to raw('<button class="btn btn-primary">Editar</button>'), edit_genus_note_path(@genus_note) %> |
+<%= link_to raw('<button class="btn btn-dark">Voltar</button>'), genus_notes_path %>

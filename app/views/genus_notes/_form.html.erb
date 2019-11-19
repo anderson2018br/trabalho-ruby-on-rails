@@ -1,0 +1,47 @@
+<%= form_with(model: genus_note, local: true) do |form| %>
+  <% if genus_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(genus_note.errors.count, "error") %> prohibited this genus_note from being saved:</h2>
+
+      <ul>
+        <% genus_note.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :genus_id %>
+    <select class="form-control" name="genus_note[genus_id]" id="genus_note_genus_id">
+        <% genus.each do |genu| %>
+            <option value="<%= genu.id %>">
+            <%= genu.name %>
+            </option>
+        <% end %>
+    </select>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :user_avatar_filename %>
+    <select class="form-control" name="genus_note[user_avatar_filename]" id="genus_note_user_avatar_filename">
+        <option value="ryan.jpeg">Ryan</option>
+        <option value="leanna.jpeg">Leanna</option>
+    </select>
+   </div>
+
+  <div class="field form-group">
+    <%= form.label :note %>
+    <%= form.text_area :note, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script>
+$('input[name="commit"]').addClass('btn').addClass('btn-success');
+</script>
+
+

@@ -1,0 +1,10 @@
+<h1>Novo Genus</h1>
+
+<%= render 'form', genu: @genu, sub_family: @sub_family %>
+
+</br>
+<%= link_to raw('<button class="btn btn-dark">Voltar</button>'), genus_path %>
+
+<script>
+$('input[name="commit"]').val("Criar Genus");
+</script>

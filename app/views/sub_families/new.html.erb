@@ -1,0 +1,10 @@
+<h1>Nova Sub Família</h1>
+
+<%= render 'form', sub_family: @sub_family %>
+
+</br>
+<%= link_to raw('<button class="btn btn-dark">Voltar</button>'), sub_families_path %>
+
+<script>
+$('input[name="commit"]').val("Criar Sub Família");
+</script>

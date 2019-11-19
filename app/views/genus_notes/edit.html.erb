@@ -1,0 +1,12 @@
+<h1>Editando Nota</h1>
+
+<%= render 'form', genus_note: @genus_note, genus: @genus %>
+
+</br>
+<%= link_to raw('<button class="btn btn-primary">Mostrar</button>'), @genus_note %> |
+<%= link_to raw('<button class="btn btn-dark">Voltar</button>'), genus_notes_path %>
+
+
+<script>
+$('input[name="commit"]').val("Atualizar Nota");
+</script>

@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usuários</h1>
+<%= link_to raw('<button id="new4" class="btn btn-dark" style="float: right;margin-top: -45px;">Novo Usuário</button>'), new_user_path %>
+
+<table class="table table-stripped display" id="table4_id">
+  <thead class="table-dark">
+    <tr>
+      <th>Email</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= link_to raw('<span style="color:black!important;" class="e1 fa fa-eye"></span> '), user %> |
+        <%= link_to raw('<span style="color:black!important;" class="e1 fa fa-pen"></span>'), edit_user_path(user) %> |
+        <%= link_to raw('<span style="color:black!important;" class="fa fa-trash"></span>'), user, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<br>
+<script>
+    $(document).ready(function () {
+        $('#table4_id').DataTable({
+                    "language": {
+                        "info": "Mostrando Página _PAGE_ de _PAGES_",
+                        "search": "",
+                        "paginate": {
+                            "next": "Próxima Página",
+                            "previous": "Página Anterior"
+                        }
+                    },
+
+                });
+                $('.dataTables_length').hide();
+                $('.dataTables_filter input').addClass('form-control').attr('placeholder','Procurar Usuário');
+                $('.dataTables_filter').css('float','left');
+    });
+
+    $('#new4').on('click',function(){
+        $('#table4_id_filter').remove();
+        $('#table4_id_info').remove();
+        $('#table4_id_paginate').remove();
+    });
+
+    $('.e4').on('click',function(){
+            $('#table4_id_filter').remove();
+            $('#table4_id_info').remove();
+            $('#table4_id_paginate').remove();
+        });
+
+        $('.bt').on('click',function(){
+                    $('#table4_id_filter').remove();
+                    $('#table4_id_info').remove();
+                    $('#table4_id_paginate').remove();
+                });
+
+</script>

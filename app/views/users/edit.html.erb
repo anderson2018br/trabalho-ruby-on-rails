@@ -1,0 +1,16 @@
+<h1>Editing User</h1>
+
+<%= render 'form', user: @user %>
+
+</br>
+
+<%= link_to raw('<button class="btn btn-primary">Mostrar</button>'), @user %> |
+<%= link_to raw('<button class="btn btn-dark">Voltar</button>'), users_path %>
+
+
+
+<script>
+$('input[name="commit"]').val("Atualizar Usuário");
+</script>
+
+

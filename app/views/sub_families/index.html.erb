@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sub Famílias</h1>
+<%= link_to raw('<button id="new1" class="btn btn-dark" style="float: right;margin-top: -45px;">Nova sub Famililia</button>'), new_sub_family_path %>
+<table class="table table-stripped display" id="table1_id">
+  <thead class="table-dark">
+    <tr>
+      <th>Nome</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_families.each do |sub_family| %>
+      <tr>
+        <td><%= sub_family.name %></td>
+        <td><%= link_to raw('<span style="color:black!important;" class="e1 fa fa-eye"></span> '), sub_family %> |
+        <%= link_to raw('<span style="color:black!important;" class="e1 fa fa-pen"></span>'), edit_sub_family_path(sub_family) %> |
+        <%= link_to raw('<span style="color:black!important;" class="fa fa-trash"></span>'), sub_family, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+<br>
+<script>
+    $(document).ready(function () {
+        $('#table1_id').DataTable({
+                    "language": {
+                        "info": "Mostrando Página _PAGE_ de _PAGES_",
+                        "search": "",
+                        "paginate": {
+                            "next": "Próxima Página",
+                            "previous": "Página Anterior"
+                        }
+                    },
+
+                });
+                $('.dataTables_length').hide();
+                $('.dataTables_filter input').addClass('form-control').attr('placeholder','Procurar Sub Familília');
+                $('.dataTables_filter').css('float','left');
+    });
+
+    $('#new1').on('click',function(){
+        $('#table1_id_filter').remove();
+        $('#table1_id_info').remove();
+        $('#table1_id_paginate').remove();
+    });
+
+    $('.e1').on('click',function(){
+            $('#table1_id_filter').remove();
+            $('#table1_id_info').remove();
+            $('#table1_id_paginate').remove();
+        });
+
+        $('.bt').on('click',function(){
+                    $('#table1_id_filter').remove();
+                    $('#table1_id_info').remove();
+                    $('#table1_id_paginate').remove();
+                });
+
+</script>

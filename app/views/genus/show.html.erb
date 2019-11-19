@@ -1,0 +1,46 @@
+<h2 class="genus-name"><%= @genu.name %></h2>
+<div class="sea-creature-container">
+    <div class="genus-photo"></div>
+        <div class="genus-details">
+            <div class="genus-details-list">
+            <% family = @sub_family.find(@genu.sub_family_id) %>
+                <p id="notice"><%= notice %></p>
+                <dt>Nome:</dt>
+                <dd><%= @genu.name %></dd>
+
+                  <dt><strong>Familia Secundária:</strong></dt>
+                  <dd><%= family.name %></dd>
+
+                  <dt><strong>Descoberto em:</strong></dt>
+                  <dd><%= @genu.first_discovered_at %></dd>
+
+                  <dt><strong>Fun fact:</strong></dt>
+                  <dd><%= @genu.fun_fact %></dd>
+
+                <%= link_to raw('<button class="btn btn-primary">Editar</button>'), edit_genu_path(@genu) %> |
+                <%= link_to raw('<button class="btn btn-dark">Voltar</button>'), genus_path %>
+            </div>
+        </div>
+</div>
+
+<div class="notes-container">
+    <h2 class="notes-header">Notas</h2>
+    <a href="/genus_notes/new"><i style="margin-top: 7px;" id="a-plus" class="fa fa-plus plus-btn">&nbsp;</i></div></a>
+</div>
+
+
+<section id="cd-timeline">
+<% @notes.each do |note| %>
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img">
+            <%= image_tag (note.user_avatar_filename), class: "img-circle", style: "border-radius: 50%;"%>
+        </div>
+
+    <div class="cd-timeline-content">
+        <h2><a href="#">Nota</a></h2>
+        <p><%= note.note %></p>
+        <span class="cd-date"</span>
+    </div>
+    </div>
+    <% end %>
+</section>

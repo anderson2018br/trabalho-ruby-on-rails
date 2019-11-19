@@ -1,0 +1,81 @@
+.page-header {
+    color: black;
+    font-weight: bold;
+    font-family: 'Lato',Arial, Helvetica, sans-serif;
+    margin: 40px 0 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
+}
+
+.show-genus {
+    color: black;
+    font-weight: bold;
+    font-family: 'Lato',Arial, Helvetica, sans-serif;
+}
+.show-genus:hover {
+    color: black;
+}
+.email {
+    margin-right: 25px;
+    font-family: inherit;
+    margin-top: 3px;
+}
+.logo {
+    color: black;
+    font-family: 'Lato',Arial, Helvetica, sans-serif;
+}
+.fa {
+    color: black!important;
+}
+.date {
+    width: fit-content!important;
+    display: -webkit-inline-box!important;
+}
+
+.pagination_desc
+{
+    margin-left: 15px;
+    margin-top: 10px;
+    font-style: italic;
+    color: #828f95;
+}
+
+.pagination_desc strong
+{
+    color: #176f94;
+}
+
+.new {
+    float: right;
+    margin-top: -45px;
+}
+
+.pagination
+{
+    margin-top: 10px;
+    float: right;
+    margin-right: 10px;
+    color: #176f94;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.pagination a
+{
+    margin: 0 1px;
+    text-decoration: none;
+    color: #828f95;
+    font-size: 75%;
+    vertical-align: 1px;
+    font-weight: normal;
+}
+
+.pagination a:hover
+{
+    text-decoration: underline;
+}
+
+.pagination img
+{
+    vertical-align: -2px;
+}
