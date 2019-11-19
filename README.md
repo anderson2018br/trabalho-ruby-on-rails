@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trabalho Ruby on Rails 
 
-Things you may want to cover:
+Acadêmicos: Anderson Luiz Trampusch e Luis Justino
 
-* Ruby version
+Desenvolvimento em ruby on rails de um site baseado no site desenvolvido no curso do framework de php Symfony 3 do site
+https://symfonycasts.com/
 
-* System dependencies
+Versão do Ruby usada: ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux].
 
-* Configuration
+Versão do Rails usada: Rails 6.0.1.
 
-* Database creation
+git version 2.17.1
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
